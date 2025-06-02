@@ -34,7 +34,9 @@ const BookDetail = ({ bookId }: BookDetailProps) => {
       <p className="text-lg">{book?.description}</p>
       <div className="flex items-center gap-2 mt-2 mb-4">
         <span className="text-yellow-500 text-lg">★</span>
-        <span className="text-zinc-700 dark:text-zinc-300 font-medium">{avgRating} / 5.0</span>
+        <span className="text-zinc-700 dark:text-zinc-300 font-medium">
+          {Number(avgRating).toFixed(2)} / 5.0
+        </span>
         <span className="text-sm text-zinc-500 ml-2">
           ({reviews.length} review{reviews.length !== 1 && 's'})
         </span>

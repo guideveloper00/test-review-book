@@ -24,9 +24,15 @@ const ReviewList: React.FC<ReviewListProps> = ({ reviews }) => {
       ) : (
         <ul className="space-y-4">
           {safeReviews.map((review) => (
-            <li key={review.id || review._id} className="border p-4 rounded-md w-[100px] mt-2">
+            <li
+              key={review.id || review._id}
+              className="border p-4 rounded-md min-w-[200px] mt-2"
+              tabIndex={0}
+              aria-label={`Review by ${review.author}, rating ${review.rating}`}
+            >
               <p className="font-bold">{review.author}</p>
               <p className="text-sm text-gray-500">Rating: {review.rating}</p>
+              {review.content && <p className="text-zinc-700 mt-1">{review.content}</p>}
             </li>
           ))}
         </ul>
