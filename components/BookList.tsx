@@ -42,13 +42,13 @@ const BookList = () => {
             <div className="flex items-center gap-2 mb-2">
               <span className="text-yellow-500 text-lg">★</span>
               <span className="text-zinc-700 dark:text-zinc-300 font-medium">
-                {book.avgRating ?? book.avg_rating ?? 'N/A'} / 5.0
+                {Number(book.avgRating).toFixed(2) ?? 'N/A'} / 5.0
               </span>
             </div>
 
             <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
-              {book.reviewCount ?? book.reviews?.length ?? 0} review
-              {(book.reviewCount ?? book.reviews?.length ?? 0) !== 1 && 's'}
+              {book.reviews?.length ?? 0} review
+              {(book.reviews?.length ?? 0) !== 1 && 's'}
             </p>
 
             <a
